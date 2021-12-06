@@ -1,0 +1,128 @@
+Start 
+IMPORT from array 
+IMPORT from os import system, name
+OUTPUT (Program Fresh-Box)
+DEFINE FUNCTION baca_file (nama_file, list_output): 
+	input f = open(nama_file, “r”) 
+	for input line f: 
+		write “ list.output.append(line.strip(“\n”) ” 
+	for input I in range(len(list_output)): 
+		write “ list_output[i] = list_output[i].spil(“,”) ” return list_output
+
+DEFINE FUNCTION tulis_file (nama_file, list_input): 
+	input f = open(nama_file,”w”) 
+	for elemen_baris:
+		for I in range(len(elemen_baris)): 
+			if (i!= len(elemen_baris)-1): 
+				write “ (str(elemen_bari[i])+”,”) “ 
+			else: 
+				write “ (str(element_baris[i])) “ 
+		read (“\n”) 
+	close()
+
+DEFINE FUNCTION tulis_file_pesanan (nama_file, username, harga, list_pesanan): 
+	input f = open (nama_file,”a”) 
+	write “ (username+”,”+str(harga)+”,”) “ 
+	for I in range(len(list_pesanan)): 
+		if(i!=len(list_pesanan)-1): 
+			write “ (str(list_pesanan[i])+”,”) “ 
+		else: 
+			write “ (str(list_pesanan[i])) “ 
+		read (“\n”)
+	close()
+
+DEFINE FUNCTION hitung_diskon (harga_awal, status_member):
+	write “ diskon is equal to 0 “ 
+	if “harga_awal” > 50000: 
+		calculate “diskon+” 0,05 times harga_awal 
+	if ”status_member” : 
+		calculate “diskon+” 0.1 times harga_awal
+
+DEFINE FUNCTION print_pesanan(pesanan,menu): 
+	write “index” is equal to 1 
+	for I in range(len(pesanan)): 
+		if “pesanan[i]!” is equal to 0: 
+			output “(f “{index}.{pesanan[i]}{menu[i][0]}”) write “index+” is equal to 1
+
+Write ” login_berhasil ” is equal to false
+write “ baca_file(“member.txt”, data_member) “ 
+while not “login_berhasil”: 
+	write “ username is equal to input(“masukkan username:”) “ write “password is equal to input(“masukkan password:”) " 
+	for I in range(len(data_member)): 
+		if data_member [i][1]==username: 
+			write “ no_member ” is equal to i 
+			write “ login_berhasil ” is equal to true 
+		else: 
+	if “ login_berhasil ”: 
+		output (“ BERHASIL LOGIN ”) 
+	else: 
+		output (“ LOGIN GAGAL ”) 
+		output (“ Pastikan Username atau Password yang Dimasukkan Sudah Benar”)
+Write “ selesai_program ” is equal to false 
+while not “selesai_program” 
+	write “ baca_file(“member.txt”, data_member) “ 
+	write “ baca_file(“menu.txt”, menu) “
+	write “pesanan” is equal to [0 for I in range(len(menu))] write “ total_harga” is equal to 0 write “selesai_pesanan” is equal false
+Output () 
+output (“+=========== DAFTAR MENU =======+”) 
+output (“|--------------------------------------------------------|”) for I in range(len(menu)): 
+	output (f ”{i}. {menu[i][0]}:Rp.{menu[i][1]} (Sisa : {menu[i][2]}”) 
+	output (“|--------------------------------------------------------|”) 
+	output (“| Diskon : |”) output (“| 1. 5%, Beli > Rp. 50000 |”) 
+	output (“| 2. 10%, Memiliki Membercard |”) 
+	output(“| --------------------------------------------------------|”) 
+	output (“+================================+”)
+While not “selesai_pesanan”: 
+	output () 
+	output (“ Jika sudah selesai memesan silahkan masukkan angka -1”) 
+	write “ no_men u” input (“Masukkan Nomor Menu Yang Ingin Dipesan:”) 
+	write “ input_valid ” is equal to false 
+	while not “ input_valid ”: 
+		write “ input_angka ” is equal to false 
+		while not “input_angka”: 
+			try: 
+				write “ no_menu ” is equal to int(no_menu)
+				Write “ input_angkah ” is equal to true
+			except: 
+				output(“Input yang ada harus berupa angka”) output () 
+				output (“Jika sudah selesai memesan silahkan masukkan angka -1”) 
+				write “ no_menu ” is equal to input (“Masukkan Nomor Menu yang ingin dipesan :”)
+		Try : 
+			write assert no_menu >= -1, “ Tidak ada menu dengan nomor menu yang sesuai’ 
+			write assert no_menu < len(menu), “Tidak ada menu dengan nomor menu yang sesuai” 
+			write int(menu[no_menu][2])>0, “Menu yang dipilih sudah sold out” 
+			write “input_valid” is equal to true 
+		except AssertionError as pesan : 
+			output (pesan) 
+			output (“Pesanan:”) 
+			write “ print_pesanan(pesanan,menu) ” 
+			output () 
+			output (“Jika sudah selesai memesan silahkan masukkan angka -1”) 
+			write “ no_menu ” is equal to input(“Masukkan Nomor Menu yang Ingin Dipesan:”)
+		If (no_menu == -1): 
+			write “ selesai_pesanan ” is equal to true 
+		else : 
+			write “ pesanana[no_menu]+ ” is equal to 1
+While “ harga_sebelum ” is equal to total_harga :
+	write “ total_harga – “ is equal to hitung_diskon(total_harga, data_member[no_member][3]==”True”) 
+	write “ total_harga ” is equal to int(total_harga) 
+	try : 
+		assert int(data_member[no_member][4])>= total_harga, “Saldo dari member tidak cukup”
+		write “ data_member [no_member][4] “ is equal to int(data_member[no_meber][4])-total_harga output (“\n+======= PRINT PEMBAYARAN =======+”) 
+		output (“>> Pesanan :”) write “ print_pesanan(pesanan,menu) “ 
+		output (“>> Harga Sebelum Diskon :”,”Rp.”, harga_sebelum) 
+		output (“>>Total Harga : “,” Rp.”, total_harga)
+		write “ tulis_file(“member.txt”, menu) “ 
+		write “ tulis_file(“menu.txt”, menu) “ 
+		write “ tulis_file_pesanan(“pesanan.txt”,username,total_harga,pesanan) “ 
+	except assertionError as pesan : 
+		write “ print(pesan) ” write “ baca_file(“menu.txt”, menu) “
+	Output (“\n+===== MULAI TRANSAKSI ULANG ====+”)| 
+	write “ mulai _ulang ” is equal to (input(“>> Transaksi Ulang [Y/T]:”)).upper() 
+	while mulai_ulang !=”Y” and mulai_ulang!= “T”: 
+		output (“Input yang ada masukkan salah. Silahkan coba lagi!”) 
+		write “ mulai_ulang ” is equal to (input(“>>Transaksu Ulang [Y/T] :”)).upper() 
+	if mulai_ulang == “T”: 
+		write ” selesai_program ” is equal to true
+Output (“\n+======= PROGRAM BERAKHIR =======+\n”) 
+END

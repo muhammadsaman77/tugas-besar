@@ -1,0 +1,6 @@
+[],['Semangka'],['2'],[48000],48000
+['saman77'],['Semangka', 'Ikan Bumbu'],['2', '2'],[48000, 64000],112000
+['saman77', 'raihan'],['Semangka', 'Ikan Bumbu', 'Ikan Bumbu'],['2', '2', '2'],[48000, 64000, 64000],176000
+['saman77'],['Semangka'],['2'],[48000],48000
+['saman77'],['Semangka'],['2'],[48000],48000
+['raihan'],['Semangka', 'Udang Bumbu'],['2', '3'],[48000, 144000],192000
